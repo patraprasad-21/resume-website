@@ -1,10 +1,12 @@
 /* ---------- Colour palette (change these to restyle everything) ---------- */
 :root {
-  --navy: #1f2a44;
-  --teal: #2a9d8f;
-  --sand: #f4f1ea;
-  --white: #ffffff;
-  --text: #2b2b2b;
+  --bg: #0b0e17;
+  --panel: #131826;
+  --line: #232a3d;
+  --text: #e8e6e1;
+  --muted: #9aa3b8;
+  --red: #ff4d5e;
+  --pink: #f6a6b8;
 }
 
 /* ---------- Element selectors: base styles ---------- */
@@ -16,26 +18,28 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--sand);
+  font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 h1, h2, h3 {
-  color: var(--navy);
+  color: var(--text);
+  line-height: 1.2;
 }
 
 a {
-  color: var(--teal);
+  color: var(--pink);
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* ---------- Navigation bar (flexbox + sticky positioning) ---------- */
@@ -43,79 +47,164 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--navy);
-  padding: 14px 40px;
   position: sticky;
   top: 0;
   z-index: 10;
+  padding: 14px 40px;
+  background-color: rgba(11, 14, 23, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
 }
 
 .logo {
-  color: var(--white);
+  color: var(--text);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+}
+
+.dot {
+  color: var(--red);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 24px;
+  gap: 28px;
 }
 
 .nav-links a {
-  color: var(--white);
-  font-weight: 600;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--teal);
-  text-decoration: none;
+  color: var(--red);
 }
 
-/* ---------- Hero section ---------- */
-.hero {
-  background-color: var(--teal);
-  text-align: center;
-  padding: 90px 20px;
+/* ---------- Hero (ID selector + absolute positioning for the sun) ---------- */
+#hero {
+  position: relative;
+  isolation: isolate;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 130px 24px 110px;
 }
 
-.hero h1 {
-  color: var(--white);
-  font-size: 2.8rem;
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: -20px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff8a95, var(--red) 60%, #b8182a);
+  box-shadow: 0 0 90px rgba(255, 77, 94, 0.45);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.hero-label {
+  font-family: 'JetBrains Mono', 'Noto Sans JP', monospace;
+  color: var(--red);
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+#hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  font-weight: 700;
+}
+
+.accent {
+  color: var(--red);
 }
 
 .tagline {
-  color: var(--white);
+  color: var(--muted);
   font-size: 1.2rem;
-  margin-top: 10px;
+  margin: 16px 0 32px;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background-color: var(--red);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(255, 77, 94, 0.4);
+}
+
+.btn-outline {
+  border: 1px solid var(--pink);
+  color: var(--pink);
+}
+
+.btn-outline:hover {
+  background-color: var(--pink);
+  color: var(--bg);
 }
 
 /* ---------- Sections ---------- */
 .section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 24px 10px;
+}
+
+.jp-label {
+  font-family: 'JetBrains Mono', 'Noto Sans JP', monospace;
+  color: var(--red);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
 }
 
 .section h2 {
-  border-bottom: 3px solid var(--teal);
-  display: inline-block;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin: 6px 0 24px;
 }
 
-/* ---------- Cards (flexbox layout) ---------- */
+/* ---------- Cards (CSS grid layout + hover effect) ---------- */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
 .card {
-  flex: 1 1 250px;
-  background-color: var(--white);
-  padding: 20px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(255, 77, 94, 0.18);
 }
 
 .card h3 {
@@ -123,12 +212,24 @@ a:hover {
 }
 
 .meta {
-  color: var(--teal);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--pink);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
 }
 
-/* ---------- Skills as pill tags ---------- */
+.tag {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 3px 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ---------- Skills ---------- */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -137,29 +238,63 @@ a:hover {
 }
 
 .skills-list li {
-  background-color: var(--navy);
-  color: var(--white);
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 0.95rem;
+  padding: 8px 20px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.skills-list li:hover {
+  color: var(--red);
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+
+/* ---------- Contact (ID selector) ---------- */
+#contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
 }
 
 /* ---------- Footer ---------- */
 .footer {
-  background-color: var(--navy);
-  color: var(--white);
+  margin-top: 90px;
+  padding: 30px 20px;
   text-align: center;
-  padding: 20px;
-  margin-top: 60px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: 'JetBrains Mono', 'Noto Sans JP', monospace;
+  font-size: 0.85rem;
 }
 
 /* ---------- Small screens ---------- */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .navbar {
     flex-direction: column;
     gap: 10px;
+    padding: 12px 20px;
   }
-  .hero h1 {
-    font-size: 2rem;
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  #hero {
+    padding: 80px 20px 70px;
+  }
+
+  #hero::after {
+    width: 170px;
+    height: 170px;
+    top: 20px;
+    right: -40px;
+    opacity: 0.5;
   }
 }
