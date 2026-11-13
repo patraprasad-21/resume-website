@@ -1,21 +1,21 @@
-/* Colours and fonts: neutrals plus one accent (teal). Change them here. */
+/* Colours and fonts: paper-like neutrals plus one accent (teal). Change them here. */
 :root {
-  --bg: #f4f1ea;
+  --bg: #f7f5ef;
   --white: #ffffff;
-  --ink: #1f2a44;
-  --muted: #4a5568;
-  --line: #d8d2c4;
+  --ink: #1c1c1c;
+  --muted: #555555;
+  --line: #cfcabb;
   --accent: #1f7a6f;
   --accent-dark: #17594f;
-  --font-text: 'Poppins', sans-serif;
-  --font-heading: 'Playfair Display', serif;
+  --font-text: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 }
 
 /* Reset and base styles for the whole page (element selectors) */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-padding-top: 88px; }
-body { font-family: var(--font-text); line-height: 1.7; color: var(--ink); background-color: var(--bg); }
-h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--ink); line-height: 1.2; }
+html { scroll-padding-top: 72px; }
+body { font-family: var(--font-text); font-size: 1.1rem; line-height: 1.65; color: var(--ink); background-color: var(--bg); }
+h1, h2, h3, h4 { line-height: 1.2; color: var(--ink); }
 p { color: var(--ink); }
 a { color: var(--accent); text-underline-offset: 3px; transition: color 0.2s, background-color 0.2s; }
 a:hover { color: var(--accent-dark); }
@@ -28,16 +28,19 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
   align-items: center;
   justify-content: space-between;
   gap: 8px 24px;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 8px 24px;
-  background-color: var(--white);
+  background-color: var(--bg);
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 .logo, .nav-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-decoration: none; }
-.logo { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; }
+.logo { font-weight: 700; font-size: 1.1rem; }
 .nav-links { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; }
+.nav-link { font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
 .nav-link:hover, .logo:hover { color: var(--accent); }
 
 /* Buttons: filled for the main action, outlined for the second one */
@@ -48,10 +51,10 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
   min-height: 44px;
   padding: 8px 24px;
   border: 2px solid var(--accent);
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: var(--accent);
   color: var(--white);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 }
 .button:hover { background-color: var(--accent-dark); border-color: var(--accent-dark); color: var(--white); }
@@ -60,38 +63,38 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 .text-link { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* Hero: the first thing a visitor sees (ID selector) */
-#hero { max-width: 960px; margin: 0 auto; padding: 96px 24px 8px; }
+#hero { max-width: 960px; margin: 0 auto; padding: 64px 24px 0; }
 #hero h1 { font-size: clamp(2.5rem, 8vw, 4.25rem); }
-.lead { max-width: 38ch; margin: 24px 0; font-size: 1.25rem; }
+.meta { margin: 8px 0 24px; padding-bottom: 24px; border-bottom: 3px solid var(--ink); font-family: var(--font-mono); font-size: 0.95rem; }
+.lead { max-width: 40ch; margin-bottom: 24px; font-size: 1.4rem; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
 
-/* Sections: one column, text no wider than about 70 characters */
-.section { max-width: 960px; margin: 0 auto; padding: 64px 24px 0; }
-.section h2 { font-size: 2rem; margin-bottom: 24px; }
+/* Sections: one column, a thin rule above each, text no wider than about 70 characters */
+.section { max-width: 960px; margin: 56px auto 0; padding: 24px 24px 0; border-top: 1px solid var(--line); }
+.section h2 { margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.9rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
 .section p { max-width: 70ch; }
-.email-address { margin: 8px 0 24px; font-weight: 600; }
+.email-address { margin: 8px 0 24px; font-family: var(--font-mono); font-weight: 400; }
 
-/* Cards: flat, thin outline, laid out with CSS grid */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-.card { padding: 24px; background-color: var(--white); border: 1px solid var(--line); border-radius: 8px; }
-.card h3 { font-size: 1.25rem; margin-bottom: 8px; }
-.card p + p { margin-top: 8px; }
+/* Entries: title on the left, date on the right, like a printed resume */
+.entry { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; margin-top: 24px; }
+.entry:first-of-type { margin-top: 0; }
+.entry h3 { font-size: 1.25rem; }
+.date { font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); }
 .detail { color: var(--muted); }
-.card .stat { margin-top: 24px; font-family: var(--font-heading); font-variant-numeric: lining-nums; font-size: 3.5rem; font-weight: 700; line-height: 1; }
 
 /* Skills: a list where every skill says where it was used */
-.skill-list { max-width: 70ch; list-style: none; }
+.skill-list { max-width: 70ch; padding-left: 24px; }
 .skill-list li { margin-bottom: 8px; }
 
 /* Resume: a paper sheet on the page (ID selector) */
 #resume .sheet { max-width: 794px; margin-top: 8px; padding: 48px; background-color: var(--white); border: 1px solid var(--line); }
 .sheet h3 { font-size: 1.75rem; }
-.sheet h4 { font-size: 1.1rem; margin: 24px 0 8px; }
+.sheet h4 { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; margin: 24px 0 8px; }
 .sheet p + p { margin-top: 8px; }
 
 /* Footer */
-.footer { margin-top: 64px; padding: 40px 24px; border-top: 1px solid var(--line); text-align: center; }
-.footer p { color: var(--muted); }
+.footer { max-width: 960px; margin: 64px auto 0; padding: 40px 24px; border-top: 1px solid var(--line); text-align: center; }
+.footer p { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
 
 /* Turn off the colour transitions for people who ask for less motion */
 @media (prefers-reduced-motion: reduce) {
@@ -102,8 +105,8 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 @media (max-width: 699px) {
   html { scroll-padding-top: 16px; }
   .navbar { position: static; padding: 8px 16px; }
-  #hero { padding: 48px 16px 8px; }
-  .section { padding: 40px 16px 0; }
+  #hero { padding: 40px 16px 0; }
+  .section { margin-top: 40px; padding: 24px 16px 0; }
   #resume .sheet { padding: 24px; }
   .actions .button { width: 100%; }
 }
@@ -114,9 +117,9 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
   .navbar, #hero, #about, #education, #projects, #skills, #contact,
   .footer, #resume h2, .download { display: none; }
   body { background-color: #ffffff; color: #000000; font-size: 10.5pt; line-height: 1.45; }
-  #resume { max-width: none; margin: 0; padding: 0; }
+  #resume { max-width: none; margin: 0; padding: 0; border: none; }
   #resume .sheet { max-width: none; padding: 0; border: none; }
   .sheet h3, .sheet h4, .sheet p { max-width: none; color: #000000; }
   .sheet h3 { font-size: 20pt; }
-  .sheet h4 { font-size: 13pt; margin: 14pt 0 4pt; }
+  .sheet h4 { font-size: 10pt; margin: 14pt 0 4pt; }
 }
