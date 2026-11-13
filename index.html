@@ -3,90 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prasad | Resume</title
-  <link href=<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>Patra Lakshmi Prasad | Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation bar -->
   <nav class="navbar">
-    <span class="logo">Prasad</span>
+    <a class="logo" href="#hero">Patra Lakshmi Prasad</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-link" href="#about">About</a></li>
+      <li><a class="nav-link" href="#education">Education</a></li>
+      <li><a class="nav-link" href="#projects">Projects</a></li>
+      <li><a class="nav-link" href="#skills">Skills</a></li>
+      <li><a class="nav-link" href="#resume">Resume</a></li>
     </ul>
+    <a class="button" href="mailto:patraprasad599@gmail.com?subject=Internship%20opportunity">Email me</a>
   </nav>
 
-  <!-- Hero / header -->
-  <header class="hero">
-    <h1>Hi, I'm Prasad</h1>
-    <p class="tagline">Business student at IIM Bangalore | Aspiring global professional</p>
+  <header id="hero">
+    <h1>Patra Lakshmi Prasad</h1>
+    <p class="lead">First-year at IIM Bangalore, interested in marketing, social media and communication, and looking for a summer internship.</p>
+    <div class="actions">
+      <a class="button" href="mailto:patraprasad599@gmail.com?subject=Internship%20opportunity">Email me about an internship</a>
+      <a class="text-link" href="#resume">See my resume</a>
+    </div>
   </header>
 
   <main>
     <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>
-        I am a first-year student at IIM Bangalore, learning the fundamentals of business
-        and marketing. I enjoy turning ideas into something real, and this website is my
-        first step into web development. My goal is to complete a master's degree abroad
-        and build an international career in business.
-      </p>
+      <h2>About</h2>
+      <p>I'm a first-year student at IIM Bangalore, studying the DBE programme. I'm also studying a BBA at the Indian Institute of Technology Patna. I scored 96.8% in my Intermediate. I like marketing, social media and communication, and I'm looking for a summer internship. After my degree, I want to do a Master in Management at a UK Russell Group university and build my career abroad.</p>
     </section>
 
     <section id="education" class="section">
       <h2>Education</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>DBE, IIM Bangalore</h3>
-          <p class="meta">IIMB | 2026 - present</p>
-          <p>First-year programme covering business fundamentals such as marketing.</p>
-        </div>
-        <div class="card">
+      <div class="card-grid">
+        <article class="card">
+          <h3>IIM Bangalore</h3>
+          <p class="detail">DBE (first year)</p>
+          <p>Coursework: Marketing Fundamentals.</p>
+        </article>
+        <article class="card">
+          <h3>Indian Institute of Technology Patna</h3>
+          <p class="detail">BBA, 2026 to 2029</p>
+        </article>
+        <article class="card">
           <h3>Intermediate (BiPC)</h3>
-          <p class="meta">96.8%</p>
-          <p>Completed with a strong score in the Biology, Physics and Chemistry stream.</p>
-        </div>
+          <p class="stat">96.8%</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Personal website</h3>
+          <p>Built with HTML and CSS, and published on GitHub Pages.</p>
+          <p><a class="text-link" href="https://github.com/patraprasad-21/resume-website">View the code on GitHub</a></p>
+        </article>
       </div>
     </section>
 
     <section id="skills" class="section">
       <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Marketing Fundamentals</li>
-        <li>HTML &amp; CSS</li>
-        <li>GitHub &amp; GitHub Pages</li>
-        <li>Communication</li>
+      <ul class="skill-list">
+        <li><strong>Marketing Fundamentals:</strong> studied as coursework at IIM Bangalore.</li>
+        <li><strong>HTML &amp; CSS (basics):</strong> used to build this website.</li>
+        <li><strong>GitHub Pages:</strong> used to publish this website.</li>
       </ul>
     </section>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>Resume Website</h3>
-          <p>A personal resume site built with HTML and CSS: sticky navbar, card layout, Google Font and a consistent colour palette. Hosted on GitHub Pages.</p>
-        </div>
-        <div class="card">
-          <h3>Marketing Fundamentals</h3>
-          <p>Coursework at IIMB covering core marketing concepts, with exam-focused study notes.</p>
-        </div>
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <p class="download"><a class="text-link" href="resume.pdf" download>Download my resume (PDF)</a></p>
+      <div class="sheet">
+        <h3>Patra Lakshmi Prasad</h3>
+        <p>patraprasad599@gmail.com</p>
+        <p>First-year at IIM Bangalore, interested in marketing, social media and communication, and looking for a summer internship.</p>
+        <h4>Projects</h4>
+        <p><strong>Personal website.</strong> Built with HTML and CSS, and published on GitHub Pages.</p>
+        <h4>Education</h4>
+        <p><strong>IIM Bangalore,</strong> DBE (first year). Coursework: Marketing Fundamentals.</p>
+        <p><strong>Indian Institute of Technology Patna,</strong> BBA, 2026 to 2029.</p>
+        <p><strong>Intermediate (BiPC),</strong> 96.8%.</p>
+        <h4>Skills</h4>
+        <p><strong>Marketing Fundamentals:</strong> studied as coursework at IIM Bangalore.</p>
+        <p><strong>HTML &amp; CSS (basics):</strong> used to build this website.</p>
+        <p><strong>GitHub Pages:</strong> used to publish this website.</p>
       </div>
     </section>
 
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:patraprasad599@gmail.com">patraprasad599@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/patraprasad-21">github.com/patraprasad-21</a></p>
+      <p>I'm looking for a summer internship. The quickest way to reach me is by email.</p>
+      <p class="email-address">patraprasad599@gmail.com</p>
+      <div class="actions">
+        <a class="button" href="mailto:patraprasad599@gmail.com?subject=Internship%20opportunity">Email me about an internship</a>
+        <a class="button button-outline" href="mailto:patraprasad599@gmail.com?subject=Let%27s%20collaborate">Let's collaborate</a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Prasad. All rights reserved.</p>
+    <p>&copy; 2026 Patra Lakshmi Prasad</p>
   </footer>
 
 </body>
