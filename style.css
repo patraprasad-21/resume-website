@@ -77,7 +77,7 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 .card h3 { font-size: 1.25rem; margin-bottom: 8px; }
 .card p + p { margin-top: 8px; }
 .detail { color: var(--muted); }
-.card .stat { margin-top: 24px; font-family: var(--font-heading); font-size: 3.5rem; font-weight: 700; line-height: 1; }
+.card .stat { margin-top: 24px; font-family: var(--font-heading); font-variant-numeric: lining-nums; font-size: 3.5rem; font-weight: 700; line-height: 1; }
 
 /* Skills: a list where every skill says where it was used */
 .skill-list { max-width: 70ch; list-style: none; }
