@@ -83,7 +83,7 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 
 /* Hero: the first thing a visitor sees (ID selector) */
 #hero { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: 48px; padding: 80px max(24px, calc((100% - var(--page)) / 2)); background: linear-gradient(135deg, #243f45, #3d676d); }
-#hero .kicker { color: var(--sand); }
+#hero .kicker { display: inline-block; padding: 6px 16px; border-radius: 999px; background-color: var(--sand); color: var(--ink); font-weight: 600; }
 #hero .headline { color: var(--white); }
 #hero .lead { color: #dbe7e5; }
 #hero a:focus-visible { outline-color: var(--sand); }
@@ -140,7 +140,7 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 .quote cite { font-style: normal; }
 
 /* Vision: two paragraphs in larger text */
-.vision { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.vision { grid-template-columns: 1fr; gap: 24px; }
 .vision p { max-width: 60ch; font-size: 1.2rem; color: var(--ink); }
 
 /* Resume: a paper sheet on the page (ID selector) */
