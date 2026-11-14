@@ -1,12 +1,13 @@
-/* Colours and fonts: warm light neutrals plus one accent (teal). Change them here. */
+/* Colours and fonts: sand neutrals, deep teal and a clay accent. Change them here. */
 :root {
-  --bg: #faf7f0;
+  --bg: #f7f2e8;
   --white: #ffffff;
-  --ink: #1b1b1f;
-  --muted: #5b5b66;
-  --line: #ddd6c6;
-  --accent: #1f7a6f;
-  --accent-dark: #17594f;
+  --ink: #1f2d31;
+  --muted: #536166;
+  --line: #ddd2bc;
+  --accent: #2e5258;
+  --accent-dark: #1f3a3f;
+  --clay: #8f5f43;
   --font-text: 'Inter', sans-serif;
   --font-display: 'Fraunces', Georgia, serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -40,23 +41,23 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
   z-index: 10;
 }
 .logo, .nav-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-decoration: none; }
-.logo { font-family: var(--font-display); font-size: 1.35rem; }
+.logo { font-family: var(--font-display); font-size: 1.35rem; color: var(--accent); }
 .nav-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-left: auto; list-style: none; }
 .nav-link { font-size: 0.95rem; }
-.nav-link:hover, .logo:hover { color: var(--accent); }
+.nav-link:hover, .logo:hover { color: var(--clay); }
 
 /* Round account icon at the top right: click it to show the email (no JavaScript) */
 .account { position: relative; }
 .account summary { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer; list-style: none; border-radius: 50%; }
 .account summary::-webkit-details-marker { display: none; }
 .account summary:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 2px; }
-.avatar { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: var(--ink); transition: background-color 0.2s; }
+.avatar { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: var(--accent); transition: background-color 0.2s; }
 .avatar svg { width: 24px; height: 24px; fill: var(--white); }
-.account summary:hover .avatar { background-color: var(--accent); }
+.account summary:hover .avatar { background-color: var(--clay); }
 .account-email { position: absolute; right: 0; top: calc(100% + 8px); padding: 8px 16px; background-color: var(--white); border: 1px solid var(--line); border-radius: 12px; font-family: var(--font-mono); font-size: 0.95rem; white-space: nowrap; }
 
 /* Big lowercase headlines and small uppercase labels */
-.headline { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2.25rem, 6vw, 4.25rem); }
+.headline { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2.25rem, 6vw, 4.25rem); color: var(--accent); }
 .hero-title { max-width: 18ch; font-size: clamp(2.75rem, 9vw, 6rem); }
 .kicker { margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
@@ -91,13 +92,13 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
 .cols p { color: var(--muted); }
 .next { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
-.label { margin-bottom: 8px; font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+.label { margin-bottom: 8px; font-size: 1.05rem; font-weight: 600; color: var(--clay); }
 
 /* Cards: flat, thin outline, big rounded corners, laid out with CSS grid */
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .card { display: flex; flex-direction: column; gap: 8px; padding: 32px; background-color: var(--white); border: 1px solid var(--line); border-radius: 24px; }
-.num { font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent); }
-.card h3 { margin-top: 24px; font-family: var(--font-display); font-weight: 400; font-size: 1.75rem; letter-spacing: -0.01em; }
+.num { font-family: var(--font-mono); font-size: 0.9rem; color: var(--clay); }
+.card h3 { margin-top: 24px; font-family: var(--font-display); font-weight: 400; font-size: 1.75rem; letter-spacing: -0.01em; color: var(--accent); }
 .detail { color: var(--muted); }
 .card .pill { margin-top: 16px; }
 
