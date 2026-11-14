@@ -100,8 +100,15 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 .glance-value { margin: 4px 0; font-weight: 600; color: var(--white); }
 .glance-note { color: #dbe7e5; }
 
+/* Key numbers: a white strip that overlaps the bottom of the hero (CSS grid, positioning) */
+.stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; max-width: 960px; margin: -48px auto 0; overflow: hidden; background-color: var(--line); border: 1px solid var(--line); border-radius: 24px; }
+.stat { padding: 24px; text-align: center; background-color: var(--white); }
+.stat-num { font-family: var(--font-display); font-size: 2.5rem; line-height: 1.1; color: var(--accent); }
+.stat-accent { color: var(--clay); }
+.stat-label { color: var(--muted); font-size: 0.95rem; }
+
 /* Sections: one column, a thin rule above each, text no wider than about 70 characters */
-.section { max-width: var(--page); margin: 96px auto 0; padding: 32px 24px 0; border-top: 1px solid var(--line); }
+.section { max-width: calc(var(--page) + 48px); margin: 96px auto 0; padding: 32px 24px 0; border-top: 1px solid var(--line); }
 .section .headline { margin-bottom: 40px; max-width: 18ch; }
 .section p { max-width: 70ch; }
 
@@ -131,7 +138,7 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 .sheet p + p { margin-top: 8px; }
 
 /* Footer */
-.footer { max-width: var(--page); margin: 96px auto 0; padding: 40px 24px; border-top: 1px solid var(--line); text-align: center; }
+.footer { max-width: calc(var(--page) + 48px); margin: 96px auto 0; padding: 40px 24px; border-top: 1px solid var(--line); text-align: center; }
 .footer p { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
 
 /* Turn off the colour transitions for people who ask for less motion */
@@ -146,6 +153,7 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
   .account-email { right: auto; left: 0; }
   #hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 16px; }
   .glance { padding: 24px; }
+  .stats { grid-template-columns: 1fr 1fr; margin: -32px 16px 0; }
   .section { margin-top: 64px; padding: 24px 16px 0; }
   .card { padding: 24px; }
   #resume .sheet { padding: 24px; }
@@ -155,7 +163,7 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 /* Print: only the resume prints, black on white, on one A4 page */
 @media print {
   @page { size: A4; margin: 15mm; }
-  .navbar, #hero, #about, #education, #projects, #skills, #contact,
+  .navbar, #hero, .stats, #about, #education, #projects, #skills, #contact,
   .footer, #resume .kicker, #resume .headline, .download { display: none; }
   body { background-color: #ffffff; color: #000000; font-size: 10.5pt; line-height: 1.45; }
   #resume { max-width: none; margin: 0; padding: 0; border: none; }
