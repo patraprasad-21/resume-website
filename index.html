@@ -6,7 +6,7 @@
   <title>Patra Prasad | Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,11 +14,12 @@
   <nav class="navbar">
     <a class="logo" href="#hero">Patra Prasad</a>
     <ul class="nav-links">
-      <li><a class="nav-link" href="#about">About</a></li>
-      <li><a class="nav-link" href="#education">Education</a></li>
-      <li><a class="nav-link" href="#projects">Projects</a></li>
-      <li><a class="nav-link" href="#skills">Skills</a></li>
-      <li><a class="nav-link" href="#resume">Resume</a></li>
+      <li><a class="nav-link" href="#about">about</a></li>
+      <li><a class="nav-link" href="#education">education</a></li>
+      <li><a class="nav-link" href="#projects">projects</a></li>
+      <li><a class="nav-link" href="#skills">skills</a></li>
+      <li><a class="nav-link" href="#resume">resume</a></li>
+      <li><a class="nav-link" href="#contact">contact</a></li>
     </ul>
     <details class="account">
       <summary title="Click to see my email" aria-label="Show my email">
@@ -29,38 +30,70 @@
   </nav>
 
   <header id="hero">
-    <h1>Patra Prasad</h1>
-    <p class="lead">First-year at IIM Bangalore, interested in marketing, social media and communication, and looking for a summer internship.</p>
+    <p class="kicker">IIM Bangalore &middot; Marketing &middot; Communication</p>
+    <h1 class="headline hero-title">i study management, and i like marketing and communication.</h1>
+    <p class="lead">I'm Patra Prasad, a first-year student at IIM Bangalore. I'm looking for a summer internship in marketing, social media or communication.</p>
     <div class="actions">
-      <a class="button" href="mailto:patraprasad599@gmail.com?subject=Internship%20opportunity">Email me about an internship</a>
-      <a class="text-link" href="#resume">See my resume</a>
+      <a class="pill pill-fill" href="mailto:patraprasad599@gmail.com?subject=Internship%20opportunity">email me about an internship &#8599;</a>
+      <a class="pill" href="#resume">see my resume &#8595;</a>
     </div>
   </header>
 
   <main>
     <section id="about" class="section">
-      <h2>About</h2>
-      <p>I'm a first-year student at IIM Bangalore, studying the DBE programme. I'm also studying a BBA at the Indian Institute of Technology Patna. I scored <strong>96.8% in my Intermediate</strong>. I like marketing, social media and communication, and I'm looking for a summer internship. After my degree, I want to do a Master in Management at a UK Russell Group university and build my career abroad.</p>
+      <p class="kicker">01 &middot; About</p>
+      <h2 class="headline">i work hard, and i'm aiming abroad.</h2>
+      <div class="cols">
+        <p>I'm a first-year student at IIM Bangalore, studying the DBE programme. I'm also studying a BBA at the Indian Institute of Technology Patna.</p>
+        <p>I scored <strong>96.8% in my Intermediate (BiPC)</strong>. I studied for long hours to get that score, and I'm proud of it.</p>
+        <p>I like marketing, social media and communication. After my degree, I want to build my career abroad.</p>
+      </div>
+      <div class="cols next">
+        <div><h3 class="label">internship.</h3><p>A summer internship in marketing, social media or communication.</p></div>
+        <div><h3 class="label">master's.</h3><p>A Master in Management at a UK Russell Group university.</p></div>
+        <div><h3 class="label">career.</h3><p>Building my career abroad.</p></div>
+      </div>
     </section>
 
     <section id="education" class="section">
-      <h2>Education</h2>
-            <div class="entry"><h3>IIM Bangalore, DBE</h3><span class="date">2026 to 2029</span></div>
-      
-      <div class="entry"><h3>Indian Institute of Technology Patna, BBA</h3><span class="date">2026 to 2029</span></div>
-      <div class="entry"><h3>Intermediate (BiPC)</h3><span class="date">96.8%</span></div>
+      <p class="kicker">02 &middot; Education</p>
+      <h2 class="headline">where i'm studying.</h2>
+      <div class="card-grid">
+        <article class="card">
+          <p class="num">01</p>
+          <h3>IIM Bangalore, DBE</h3>
+          <p class="detail">2026 to 2029</p>
+        </article>
+        <article class="card">
+          <p class="num">02</p>
+          <h3>Indian Institute of Technology Patna, BBA</h3>
+          <p class="detail">2026 to 2029</p>
+        </article>
+        <article class="card">
+          <p class="num">03</p>
+          <h3>Intermediate (BiPC)</h3>
+          <p class="detail">96.8%</p>
+        </article>
+      </div>
     </section>
 
     <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="entry"><h3>Personal website</h3><span class="date">2026</span></div>
-      <p>Built with HTML and CSS, and published on GitHub Pages.</p>
-      <p><a class="text-link" href="https://github.com/patraprasad-21/resume-website">View the code on GitHub</a></p>
+      <p class="kicker">03 &middot; Projects</p>
+      <h2 class="headline">what i've built so far.</h2>
+      <div class="card-grid">
+        <article class="card">
+          <p class="num">01</p>
+          <h3>Personal website</h3>
+          <p>Built with HTML and CSS, and published on GitHub Pages.</p>
+          <p><a class="pill" href="https://github.com/patraprasad-21/resume-website">view the code &#8599;</a></p>
+        </article>
+      </div>
     </section>
 
     <section id="skills" class="section">
-      <h2>Skills</h2>
-            <ul class="skill-list">
+      <p class="kicker">04 &middot; Skills</p>
+      <h2 class="headline">what i can do, and what i'm learning.</h2>
+      <ul class="skill-list">
         <li><strong>HTML &amp; CSS (basics):</strong> used to build this website.</li>
         <li><strong>GitHub Pages:</strong> used to publish this website.</li>
         <li><strong>Focus and concentration:</strong> studied for long hours to score 96.8% in Intermediate (BiPC).</li>
@@ -71,9 +104,10 @@
     </section>
 
     <section id="resume" class="section">
-      <h2>Resume</h2>
-      <p class="download"><a class="text-link" href="resume.pdf" download>Download my resume (PDF)</a></p>
-            <div class="sheet">
+      <p class="kicker">05 &middot; Resume</p>
+      <h2 class="headline">my resume, ready to download.</h2>
+      <p class="download"><a class="pill" href="resume.pdf" download>download my resume (PDF) &#8595;</a></p>
+      <div class="sheet">
         <h3>Patra Prasad</h3>
         <p>patraprasad599@gmail.com</p>
         <p>First-year at IIM Bangalore, interested in marketing, social media and communication, and looking for a summer internship.</p>
@@ -94,12 +128,12 @@
     </section>
 
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>I'm looking for a summer internship. The quickest way to reach me is by email.</p>
-      <p class="email-address">patraprasad599@gmail.com</p>
+      <p class="kicker">06 &middot; Contact</p>
+      <h2 class="headline">get in touch.</h2>
+      <p>I'm looking for a summer internship. The quickest way to reach me is by email. Use the buttons below, or click the round icon at the top right of the page to see my address.</p>
       <div class="actions">
-        <a class="button" href="mailto:patraprasad599@gmail.com?subject=Internship%20opportunity">Email me about an internship</a>
-        <a class="button button-outline" href="mailto:patraprasad599@gmail.com?subject=Let%27s%20collaborate">Let's collaborate</a>
+        <a class="pill pill-fill" href="mailto:patraprasad599@gmail.com?subject=Internship%20opportunity">email me about an internship &#8599;</a>
+        <a class="pill" href="mailto:patraprasad599@gmail.com?subject=Let%27s%20collaborate">let's collaborate &#8599;</a>
       </div>
     </section>
   </main>
