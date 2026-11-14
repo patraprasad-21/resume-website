@@ -181,3 +181,7 @@ a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
 .quote p { max-width: none; font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.4; color: var(--accent); }
 .quote footer { margin-top: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--clay); }
 @media print { #philosophy, #vision { display: none; } }
+.quote { max-width: 760px; padding: 32px; background-color: var(--white); border: 1px solid var(--line); border-left: 6px solid var(--accent); border-radius: 24px; }
+.quote p { max-width: none; font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.4; color: var(--accent); }
+.quote footer { margin-top: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--clay); }
+@media print { #philosophy, #vision { display: none; } }
